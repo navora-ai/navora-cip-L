@@ -197,11 +197,11 @@ canvas{display:block}
   <div class="top-sep"></div>
   <div class="top-meta">40 J · m · Jg. 86 · ADHS (Spätdiagnose) · Co-Founder/CEO · Hochleistungsprofil · 6 Labormesspunkte 2008–2026</div>
   <div class="top-flags">
-    <span class="flag fs">⚑ MS-FAMILIENRISIKO</span>
-    <span class="flag fs">⚑ EBV DURCHGEMACHT</span>
-    <span class="flag fw">△ VIT D CHRONISCH ↓</span>
-    <span class="flag fw">△ HFE UNGEKLÄRT</span>
-    <span class="flag fi">◈ 6 PARAMETER NIE GEMESSEN</span>
+    <span class="flag fs">⚑ Neuroimmunolog. Familienkontext</span>
+    <span class="flag fs">⚑ EBV-Anamnese dokumentiert</span>
+    <span class="flag fw">△ Vitamin-D-Reserve niedrig-normal</span>
+    <span class="flag fw">△ Eisenregulation offen</span>
+    <span class="flag fi">◈ Offene Basisparameter (6)</span>
   </div>
 </div>
 
@@ -237,7 +237,7 @@ canvas{display:block}
     <div class="nav-group-label">Risikoprofil</div>
     <div class="nav-item" data-page="p-ms" onclick="nav(this)">
       <svg class="nav-icon" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-      MS-Risikokaskade
+      Neuroimmunologischer Kontext
     </div>
     <div class="nav-item" data-page="p-iron" onclick="nav(this)">
       <svg class="nav-icon" viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 4v8m0 2v2"/></svg>
@@ -249,7 +249,7 @@ canvas{display:block}
     </div>
     <div class="nav-item" data-page="p-cardio" onclick="nav(this)">
       <svg class="nav-icon" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-      Kardio &amp; POTS
+      Kardio-autonome Achse
       <span class="nav-badge" style="background:var(--sig-b);border-color:var(--sig-d);color:var(--sig)">⚑</span>
     </div>
   </div>
@@ -343,12 +343,37 @@ canvas{display:block}
     </div>
   </div>
 
+  <!-- WAS NICHT BEHAUPTET WIRD BOX -->
+  <div style="background:var(--sur);border:1px solid var(--bd);border-left:4px solid var(--ok);border-radius:var(--r);padding:12px 15px">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+      <div>
+        <div style="font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--t3);margin-bottom:8px">Diese Übersicht behauptet nicht</div>
+        <div style="display:flex;flex-direction:column;gap:4px">
+          <div style="display:flex;gap:7px;font-size:11px;color:var(--t2)"><span style="color:var(--t4);flex-shrink:0">✕</span>dass eine MS, EDS/HSD, Hämochromatose, Autoimmunerkrankung oder neurologische Erkrankung vorliegt</div>
+          <div style="display:flex;gap:7px;font-size:11px;color:var(--t2)"><span style="color:var(--t4);flex-shrink:0">✕</span>dass ADHS durch Mikronährstoffmangel verursacht wurde</div>
+          <div style="display:flex;gap:7px;font-size:11px;color:var(--t2)"><span style="color:var(--t4);flex-shrink:0">✕</span>dass normal-niedrige Laborwerte automatisch pathologisch sind</div>
+          <div style="display:flex;gap:7px;font-size:11px;color:var(--t2)"><span style="color:var(--t4);flex-shrink:0">✕</span>dass eine Diagnose gestellt oder eine Therapieentscheidung getroffen wird</div>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ok);margin-bottom:8px">Diese Übersicht zeigt</div>
+        <div style="display:flex;flex-direction:column;gap:4px">
+          <div style="display:flex;gap:7px;font-size:11px;color:var(--t2)"><span style="color:var(--ok);flex-shrink:0">→</span>Objektive Laborverläufe und wiederkehrende Muster</div>
+          <div style="display:flex;gap:7px;font-size:11px;color:var(--t2)"><span style="color:var(--ok);flex-shrink:0">→</span>Offene Abklärungsfragen und modifizierbare Reservefaktoren</div>
+          <div style="display:flex;gap:7px;font-size:11px;color:var(--t2)"><span style="color:var(--ok);flex-shrink:0">→</span>Relevante Familien- und Kontextinformationen</div>
+          <div style="display:flex;gap:7px;font-size:11px;color:var(--t2)"><span style="color:var(--ok);flex-shrink:0">→</span>Care Gaps, die im normalen Sprechstundenformat leicht verloren gehen</div>
+          <div style="display:flex;gap:7px;font-size:11px;color:var(--t2)"><span style="color:var(--ok);flex-shrink:0">→</span>Priorisierte Gesprächsgrundlage für Fachkonsultationen</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Risk flags -->
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
     <div style="background:var(--sig-b);border:1px solid var(--sig-d);border-left:3px solid var(--sig);border-radius:var(--r);padding:10px 14px">
-      <div style="font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--sig);margin-bottom:6px">⚑ Kritische Risikokonstellation</div>
+      <div style="font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--sig);margin-bottom:6px">⚑ Präventiv relevante Konstellation</div>
       <div style="font-size:11px;color:var(--t1);line-height:1.6">
-        <strong>EBV durchgemacht (2008)</strong> + <strong>Schwester MS</strong> + <strong>Vit D chronisch &lt;35 µg/l</strong> = dokumentierte MS-Risikotrias.
+        <strong>EBV durchgemacht (2008)</strong> + <strong>Schwester MS</strong> + <strong>Vit D chronisch &lt;35 µg/l</strong> = dokumentierte neuroimmunologische Konstellation.
         Alle drei Faktoren gleichzeitig vorhanden — keiner bisher aktiv adressiert.
       </div>
     </div>
@@ -411,12 +436,12 @@ canvas{display:block}
       <div class="card-hd">
         <div class="card-hd-dot" style="background:var(--sig)"></div>
         <span class="card-hd-title">Ferritin + Transferrin-Sättigung</span>
-        <span class="tag ts" style="margin-left:auto">HFE UNGEKLÄRT</span>
+        <span class="tag ts" style="margin-left:auto">Eisenregulation offen</span>
       </div>
       <div class="card-body" style="padding-bottom:6px">
         <div style="position:relative;height:140px"><canvas id="c-iron"></canvas></div>
         <div style="margin-top:7px;padding:6px 8px;background:var(--wrn-b);border-radius:var(--rs);border-left:2px solid var(--wrn);font-size:9px;color:var(--t2);line-height:1.45">
-          Transferrin-Sättigung 49% bei Ferritin 48 µg/l — paradox. Klassisches Frühzeichen Hämochromatose (C282Y/H63D). Risiko: hepatozelluläres Karzinom, ZNS-Eisenakkumulation. <strong>HFE-Genotyp nie bestimmt.</strong>
+          Transferrin-Sättigung 49% bei Ferritin 48 µg/l — paradox. Klassisches Frühzeichen Hämochromatose (C282Y/H63D). Risiko: Langzeitkomplikationen (bei bestätigter Erkrankung), ggf. Eisenakkumulation in Organen. <strong>HFE-Genotyp nie bestimmt.</strong>
         </div>
       </div>
     </div>
@@ -469,7 +494,7 @@ canvas{display:block}
       <div class="card-hd">
         <div class="card-hd-dot" style="background:var(--sig)"></div>
         <span class="card-hd-title">Creatinin — Nierentrend (µmol/l)</span>
-        <span class="tag ts" style="margin-left:auto">SPRUNG +56%</span>
+        <span class="tag ts" style="margin-left:auto">milder Anstieg (+14%)%</span>
       </div>
       <div class="card-body" style="padding-bottom:6px">
         <div style="position:relative;height:140px"><canvas id="c-creat"></canvas></div>
@@ -483,12 +508,15 @@ canvas{display:block}
 <!-- Additional Lab sub-tabs with new analyses -->
   <div style="border-top:2px solid var(--bd);margin-top:12px;padding-top:14px">
     <div style="font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--t4);margin-bottom:10px">ERWEITERTE ANALYSEN</div>
-    <div style="display:flex;gap:5px;flex-wrap:wrap;margin-bottom:14px">
+    <div style="display:flex;gap:5px;flex-wrap:wrap;margin-bottom:6px">
       <div class="ctab on" id="lt-out-btn" onclick="labTab(this,'lt-outliers')">⚑ Ausreisser &amp; Trends</div>
       <div class="ctab" id="lt-str-btn" onclick="labTab(this,'lt-stress')">⟳ Stress &amp; Ereignis-Korrelation</div>
       <div class="ctab" id="lt-ctx-btn" onclick="labTab(this,'lt-ctx')">📋 3-Ebenen-Kontext</div>
       <div class="ctab" id="lt-clu-btn" onclick="labTab(this,'lt-cluster')">🕸 Biomarker-Cluster</div>
-      <div class="ctab" id="lt-rad-btn" onclick="labTab(this,'lt-radar')">📡 Risiko-Radar</div>
+      <div class="ctab" id="lt-rad-btn" onclick="labTab(this,'lt-radar')">📡 Reserve- &amp; Abklärungsradar</div>
+    </div>
+    <div id="lab-tab-desc" style="font-size:11px;color:var(--t3);padding:5px 2px 10px;line-height:1.4;min-height:20px;font-style:italic">
+      Welche Werte fallen aus dem Verlauf heraus oder zeigen eine wiederholte Richtung?
     </div>
     <div class="cpanel active" id="lt-outliers">
       <div id="lab-outlier-content"></div>
@@ -531,7 +559,7 @@ canvas{display:block}
 <!-- ═══ PAGE 4: MS RISIKOKASKADE ═══ -->
 <div class="page" id="p-ms">
   <div class="ph">
-    <span class="ph-title">MS-Risikokaskade</span>
+    <span class="ph-title">Neuroimmunolog. Kontext</span>
     <span class="ph-sub">Personalisiertes Risikoprofil · Evidenzbasiert · Alle Faktoren dokumentiert vorhanden</span>
   </div>
   <div class="g2">
@@ -598,7 +626,7 @@ canvas{display:block}
   <!-- Reframing callout — filled by initNeuro -->
   <div id="neuro-reframing"></div>
   <div class="card" style="border-color:var(--gd-bd)">
-    <div class="card-hd"><div class="card-hd-dot" style="background:var(--gd)"></div><span class="card-hd-title">Standard-Referenzwerte vs. ADHS-adjustierte Zielwerte</span></div>
+    <div class="card-hd"><div class="card-hd-dot" style="background:var(--gd)"></div><span class="card-hd-title">Standard-Referenzwerte vs. Standard-Referenzbereich vs. funktionelle Reserve im Kontext</span></div>
     <div class="card-body-sm">
       <table style="width:100%;border-collapse:collapse;font-size:10px">
         <tr style="background:var(--sur2)">
@@ -654,6 +682,7 @@ canvas{display:block}
 
 <!-- ═══ PAGE 8: AKTIONSPLAN ═══ -->
 <div class="page" id="p-action">
+  <div id="arzt-briefing"></div>
   <div class="ph">
     <span class="ph-title">Priorisierter Aktionsplan</span>
     <span class="ph-sub">Evidenzbasiert · Für nächstes Arztgespräch</span>
@@ -681,10 +710,12 @@ canvas{display:block}
 </div>
 
 <!-- ═══ PAGE 7: KARDIO/POTS ═══ -->
+
+  <div id="patient-kurzversion"></div>
 <div class="page" id="p-cardio">
   <div class="ph">
-    <span class="ph-title">Kardiovaskulär &amp; Autonomes Nervensystem</span>
-    <span class="ph-sub">Herzschmerz · POTS-like · HRV · Dysautonomie · Kardiologische Abklärung</span>
+    <span class="ph-title">Kardio-autonome Achse — herznahe Schmerzen &amp; autonome Regulation</span>
+    <span class="ph-sub">Herzschmerz · autonome Regulationsauffälligkeiten · HRV · Dysautonomie · Kardiologische Abklärung</span>
   </div>
   <div id="cardio-alert"></div>
   <div class="g2" id="cardio-main"></div>
@@ -1127,7 +1158,7 @@ ADHS: lifelong, Kompensation über Jahrzehnte — Hochleistungskarriere als stru
 
   <!-- ── SUB-PANE 4: FAMILIENANAMNESE ── -->
   <div class="pt-pane" id="pt-familie">
-    <div class="pt-note">Familienanamnese für NAVORA besonders relevant: MS-Risikotrias, Thalassämie-Trait, ADHS/Neurodivergenz, Hämochromatose-Risiko (HFE), Tumorgeschichte.</div>
+    <div class="pt-note">Familienanamnese für NAVORA besonders relevant: neuroimmunologische Konstellation, Thalassämie-Trait, ADHS/Neurodivergenz, Hämochromatose-Risiko (HFE), Tumorgeschichte.</div>
     <div class="fi-section">
       <div class="fi-section-title">Bekannte Familienerkrankungen — Checkliste</div>
       <div class="ck-grid">
@@ -1295,7 +1326,7 @@ ADHS: lifelong, Kompensation über Jahrzehnte — Hochleistungskarriere als stru
       <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px">
         <div style="padding:8px 10px;background:var(--sig-b);border:1px solid var(--sig-d);border-radius:var(--rs)">
           <div style="font-size:9px;font-weight:700;color:var(--sig);margin-bottom:4px">⚑ MS-RISIKOACHSE</div>
-          <div style="font-size:10px;color:var(--t2);line-height:1.5">Schwester MS → Risiko ×2–5<br>EBV 2008 → Risiko ×32<br>Vit D chronisch &lt;35 µg/l</div>
+          <div style="font-size:10px;color:var(--t2);line-height:1.5">Schwester MS → Risiko ×2–5<br>EBV 2008 → erhöhtes Erkrankungsrisiko laut Bjornevik et al. 2022<br>Vit D chronisch &lt;35 µg/l</div>
         </div>
         <div style="padding:8px 10px;background:var(--wrn-b);border:1px solid var(--wrn-d);border-radius:var(--rs)">
           <div style="font-size:9px;font-weight:700;color:var(--wrn);margin-bottom:4px">⚑ NEURODIVERGENZ FAMILIÄR</div>
@@ -1506,7 +1537,7 @@ ADHS: Sport = wichtige Regulationsstrategie (Dopamin/Noradrenalin). Schwimmen al
     </div>
     <div class="fi-section">
       <div class="fi-section-title">Wasserlösen &amp; Harnsystem</div>
-      <div class="pt-note" style="background:var(--sig-b);border-color:var(--sig-d)">⚑ KLINISCHER BEFUND: Hämaturie Sep 2022 (10 Ery/µl) + Nov 2022 (25 Ery/µl). Urologie / Nephrologie bisher nie konsultiert. Abklärung dringend ausstehend.</div>
+      <div class="pt-note" style="background:var(--sig-b);border-color:var(--sig-d)">⚑ KLINISCHER BEFUND: Hämaturie Sep 2022 (10 Ery/µl) + Nov 2022 (25 Ery/µl). Urologie / Nephrologie bisher nie konsultiert. Abklärung noch ausstehend.</div>
       <div class="fi-grid">
         <div class="fi-item">
           <div class="fi-label">Farbe / Geruch des Urins (auffällig?)</div>
@@ -1694,7 +1725,7 @@ ADHS: Sport = wichtige Regulationsstrategie (Dopamin/Noradrenalin). Schwimmen al
         <div class="sys-organ" style="margin-top:14px">
           <div class="sys-organ-hd" style="font-size:12px">Nieren &amp; Harnwege</div>
           <div style="padding:8px 10px;background:var(--sig-b);border-left:3px solid var(--sig);border-radius:var(--rs);margin-bottom:8px;font-size:12px;color:var(--t2)">
-            ⚑ Hämaturie Sep 2022 (10 Ery/µl) + Nov 2022 (25 Ery/µl) — nie urologisch abgeklärt
+            ⚑ Frühere Mikrohämaturie 2022. Falls keine abschliessende Klärung erfolgte: Verlaufskontrolle mit Morgenurin, Sediment und ACQ sinnvoll
           </div>
           <div class="fi-item"><div class="fi-label">Aktueller Urin / Beschwerden</div><div class="fi-val tbc" contenteditable="true">tbc — Urologie / Nephrologie ausstehend. ACQ + eGFR + Sediment anordnen.</div></div>
           <br>
@@ -2239,7 +2270,7 @@ function initOverview(){
   const risks = [
     {t:'Mikrozytose + Thalassämie?', e:'MCV 80.2 fl persistierend · RDW-SD 33.9 · Hb-El. nie', sc:'ts'},
     {t:'Hämochromatose-Prädisposition', e:'Transf.-Sätt. 49% bei niedrigem Ferritin · HFE ungeklärt', sc:'ts'},
-    {t:'MS-Risikotrias', e:'Schwester MS + EBV 2008 + Vit D chronisch &lt;35', sc:'ts'},
+    {t:'neuroimmunologische Konstellation', e:'Schwester MS + EBV 2008 + Vit D chronisch &lt;35', sc:'ts'},
     {t:'Metabolisches Stressmuster', e:'Triglyzeride ×2.5 · HDL ↓ · Creatinin +56%', sc:'tw'},
     {t:'Neuronale Mikronährstoff-Insuffizienz', e:'Vit D 30 · B12 sinkend · Zn/Mg nie gemessen', sc:'tw'},
     {t:'Ungeklärte Hämaturie 2022', e:'2× signifikant · kein Follow-up dokumentiert', sc:'tw'},
@@ -2262,7 +2293,7 @@ function initLab(){
   makeBMChart('c-mcv',[null,80.2,84.5,null,null,null,null,80.2],85,95,'fl',C.sig,'MCV');
   // Iron: 2 lines
   makeIronChart();
-  makeBMChart('c-vitd',[null,null,34,null,null,null,30,null],50,80,'µg/l',C.wrn,'Vit D — MS-Risikobereich');
+  makeBMChart('c-vitd',[null,null,34,null,null,null,30,null],50,80,'µg/l',C.wrn,'Vit D — funktioneller Reservebereich');
   makeBMChart('c-b12',[null,null,57,null,null,null,44,null],35,120,'pmol/l',C.int,'Holotranscobalamin');
   makeLipidChart();
   makeBMChart('c-creat',[null,null,72,null,null,null,75,82],62,115,'µmol/l',C.ok,'Creatinin (82 = stabil, in Referenz)');
@@ -2556,62 +2587,53 @@ function initLabFirst(){
 }
 
 function initMissing(){
-  const miss = [
-    {n:'Hb-Elektrophorese',why:'Persistente Mikrozytose MCV 80.2 nie erklärt. Thalassämie-Träger ausschliessen oder bestätigen.',sc:'ts',imp:'Diagnose blockiert'},
-    {n:'HFE-Genotyp (C282Y, H63D)',why:'Transferrin-Sättigung 49% bei niedrigem Ferritin — klassisches Frühzeichen. Hämochromatose und Krebsrisiko klären.',sc:'ts',imp:'Krebspräven.'},
-    {n:'Vitamin D 25-OH (aktuell)',why:'Zuletzt 30 µg/l (2023). Für MS-Familienrisiko Ziel &gt;50–80 µg/l. Nicht gemessen Jun 2026.',sc:'ts',imp:'MS-Prävention'},
-    {n:'Homocystein',why:'Holotranscobalamin sinkend (-23% in 14 Mo.). Homocystein = funktioneller Marker Methylierung + B12-Status. Hochleistungskompensation + GI-Absorption. Kein Medi-Faktor (keine ADHS-Medikation).',sc:'ts',imp:'Kardiovasc./Neuro'},
-    {n:'Kortisol-Tagesprofil (4× Speichel)',why:'Chronischer Stress: Trennung 2025, Tod Vater Jan 2025, CEO/NGO/Board-Last. HPA-Achse bestimmt Immunsuppression, Infektanfälligkeit, Triglyzeridanstieg.',sc:'tw',imp:'Immunfunktion'},
-    {n:'Magnesium (erythrozytär)',why:'Magnesiummangel bei ADHS häufig — Dopaminrezeptoren, Schlaf, Muskelspannung. Serum-Mg ungeeignet (gibt nur ~1% des Körper-Mg wieder).',sc:'tw',imp:'ADHS-Funktion'},
-    {n:'Zink (Plasma)',why:'Zink-Depletion direkt mit ADHS korreliert (literaturgestützt). Kofaktor Dopamin- und Enzymsynthese.',sc:'tw',imp:'ADHS-Funktion'},
-    {n:'Omega-3 Index (EPA+DHA)',why:'Neuronale Membranfunktion. Bei ADHS systemisch reduziert. Entzündungsregulation und kardiovaskuläre Protektion.',sc:'tw',imp:'Neuro/Kardio'},
-    {n:'Triglyzeride + HDL (Jun 2026)',why:'Zuletzt 2.06 mmol/l (Feb 2023). Trennung + Tod Vater 2025 als neue Stressachse seit Messung. Verlauf unklar. Kardiovaskuläres Monitoring notwendig.',sc:'tw',imp:'Kardiovasc.'},
+  const el = document.querySelector('#p-missing .card');
+  // Replace content with proper care gap matrix
+  const gaps = [
+    {n:'Persistierende Mikrozytose', beleg:'MCV 80.2 fl stabil 2008–2026', warum:'Einordnung als Thalassämie-Trait oder andere Ursache steht aus', prio:'Hoch', frage:'Hb-Elektrophorese + HbA2/HbF sinnvoll?'},
+    {n:'Hb-Elektrophorese / HbA2 / HbF', beleg:'Nie gemessen trotz 18J Mikrozytose', warum:'Unterscheidung Thalassämie vs. andere mikrozytäre Anämie', prio:'Hoch', frage:'Kann mit einfachem Blutbild-Zusatz abgeklärt werden?'},
+    {n:'Eisenstatus 2026', beleg:'Letzte Messung Feb 2023', warum:'TSAT 2023 erhöht — Verlauf unklar', prio:'Hoch', frage:'Nüchtern: Ferritin, Eisen, Transferrin, TSAT, CRP wiederholen?'},
+    {n:'TSAT 49% verlaufsvalidieren', beleg:'Einmalig Feb 2023, Nüchternstatus unbekannt', warum:'Einmalig erhöhte TSAT bei normalem Ferritin — aussagekräftig erst nüchtern', prio:'Mittel', frage:'Nüchtern-Kontrolle vor HFE-Diskussion sinnvoll?'},
+    {n:'Vitamin D 2026', beleg:'Letzter Wert 30 µg/l (Feb 2023)', warum:'Familiärer neuroimmunologischer Kontext: Reservebereich >50 µg/l wünschenswert', prio:'Mittel', frage:'Aktuellen Wert bestimmen + Ziel >50 µg/l definieren?'},
+    {n:'B12-Funktion vollständig prüfen', beleg:'HoloTC sinkend (57→44 pmol/l), MMA + Homocystein fehlen', warum:'HoloTC allein zeigt Speicher, nicht Funktion — bei GI/Stress relevant', prio:'Mittel', frage:'MMA + Homocystein ergänzen?'},
+    {n:'Magnesium / Zink / Omega-3', beleg:'Nie gemessen', warum:'Bei ADHS, Stress, GI-Beschwerden funktionell relevant', prio:'Mittel', frage:'Mg erythrozytär + Zn + Omega-3-Index als Basisergänzung?'},
+    {n:'GI-Achse nicht abgeschlossen', beleg:'Standardtests 2023 negativ — SIBO/Calprotectin fehlen', warum:'Stressdarm, Malabsorption funktionell nicht ausgeschlossen', prio:'Niedrig', frage:'Calprotectin, H. pylori, SIBO-Atemtest erwägen?'},
+    {n:'Triglyzeride / HDL 2026', beleg:'Letzter Wert Feb 2023 (TG 2.06, unter Stresslast)', warum:'War möglicherweise stressbedingt — Nüchtern-Verlauf fehlt', prio:'Mittel', frage:'Nüchtern-Lipidprofil 2026 inkl. ApoB?'},
+    {n:'Frühere Mikrohämaturie', beleg:'Sep + Nov 2022 (10/25 Ery/µl), nicht abgeschlossen', warum:'Unklar ob persistierend oder transient — einfach kontrollierbar', prio:'Mittel', frage:'Morgenurin + Sediment + ACQ zur Verlaufskontrolle?'},
+    {n:'Herznahe Schmerzen nicht differenziert', beleg:'Kardiologisch unauffällig — nicht-kardiale Achsen nicht geprüft', warum:'BWS/Brustwand, Reflux, autonome Dysregulation als Differenzial', prio:'Niedrig', frage:'Stehtest / HRV / GI-Abklärung ergänzen?'},
+    {n:'Hypermobilität Familie', beleg:'Töchter: vermehrte Verstauchungen/Bandprobleme', warum:'Beighton-Score als einfaches Screening nie erfolgt', prio:'Niedrig', frage:'Strukturiertes Hypermobilitäts-Screening in der Familie sinnvoll?'},
+    {n:'Schlaf / Restless Legs', beleg:'Nie strukturiert erfasst', warum:'Bei ADHS, GI und Mg-Mangel häufig relevant', prio:'Niedrig', frage:'Schlafprofil im Rahmen ADHS-Nachsorge klären?'},
   ];
-  document.getElementById('missing-params').innerHTML = miss.map(m=>`
-    <div style="display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--bg3);align-items:flex-start">
-      <div style="width:200px;flex-shrink:0">
-        <div style="font-size:11px;font-weight:500;color:var(--t1)">${m.n}</div>
-        <span class="tag ${m.sc}" style="margin-top:3px;display:inline-block">${m.imp}</span>
-      </div>
-      <div style="flex:1;font-size:10px;color:var(--t2);line-height:1.5">${m.why}</div>
-      <span class="tag ${m.sc}" style="flex-shrink:0">FEHLT</span>
+  const prioColor = {Hoch:'sig', Mittel:'wrn', Niedrig:'int'};
+  const parentEl = document.getElementById('p-missing');
+  if(!parentEl) return;
+  parentEl.innerHTML = `
+    <div class="ph">
+      <span class="ph-title">Care-Gap-Matrix — Offene Basisabklärungen</span>
+      <span class="ph-sub">Objektiv belegbar · priorisiert · keine Diagnosebehauptung</span>
     </div>
-  `).slice(0,6).join('');
-
-  document.getElementById('missing-immune').innerHTML = `
-    <div style="font-size:10px;color:var(--t2);line-height:1.6">
-      Infektanfälligkeit ist das Hauptsymptom. Die Standard-Leukozytenzahl (6.64 G/l, aktuell normal) zeigt <em>Anzahl</em>, nicht <em>Funktion</em>.
-      Qualitative Immundiagnostik fehlt vollständig:
+    <div style="padding:9px 12px;background:var(--gd-bg);border:1px solid var(--gd-bd);border-left:3px solid var(--gd);border-radius:var(--r);font-size:11px;color:var(--t2);margin-bottom:4px">
+      Diese Matrix zeigt offene Abklärungsfelder mit Belegen — nicht Diagnosen oder Warnungen. Alle Punkte sind medizinisch einfach kontrollierbar.
     </div>
-    <div style="margin-top:8px;display:grid;grid-template-columns:1fr 1fr;gap:6px">
-      ${[
-        ['IgG-Subklassen (IgG1–4)','IgG3-Mangel häufigste Ursache rezidivierender Atemwegsinfekte bei Erwachsenen'],
-        ['NK-Zell-Aktivität','Natürliche Killerzellen = erste Virusabwehr · direkte Infektanfälligkeit'],
-        ['sIgA (Stuhl)','Sekretorisches IgA = Darmbarriere · bei GI-Symptomen zentral'],
-        ['EBV VCA-IgG aktuell','Latente EBV-Reaktivierung unter Stress — Ausgangstiter 1:320 (2008)'],
-      ].map(([n,w])=>`
-        <div style="background:var(--sur2);border:1px solid var(--bd);border-radius:var(--rs);padding:8px 10px">
-          <div style="font-size:10px;font-weight:500;color:var(--t1);margin-bottom:3px">${n}</div>
-          <div style="font-size:9px;color:var(--t3)">${w}</div>
-        </div>
-      `).join('')}
+    <div class="card">
+      <table style="width:100%;border-collapse:collapse;font-size:11px">
+        <tr style="background:var(--sur2)">
+          <th style="padding:8px 10px;text-align:left;font-size:10px;color:var(--t3);border-bottom:1px solid var(--bd)">Care Gap</th>
+          <th style="padding:8px 10px;text-align:left;font-size:10px;color:var(--t3);border-bottom:1px solid var(--bd)">Objektiver Beleg</th>
+          <th style="padding:8px 10px;text-align:left;font-size:10px;color:var(--t3);border-bottom:1px solid var(--bd)">Warum relevant</th>
+          <th style="padding:8px 10px;text-align:center;font-size:10px;color:var(--t3);border-bottom:1px solid var(--bd)">Priorität</th>
+          <th style="padding:8px 10px;text-align:left;font-size:10px;color:var(--t3);border-bottom:1px solid var(--bd)">Nächste Frage</th>
+        </tr>
+        ${gaps.map((g,i)=>`<tr style="border-bottom:1px solid var(--bg3);background:${i%2?'var(--sur2)':'var(--sur)'}">
+          <td style="padding:7px 10px;font-weight:600;color:var(--t1)">${g.n}</td>
+          <td style="padding:7px 10px;font-size:10.5px;color:var(--t3)">${g.beleg}</td>
+          <td style="padding:7px 10px;font-size:10.5px;color:var(--t2)">${g.warum}</td>
+          <td style="padding:7px 10px;text-align:center"><span style="font-size:9px;font-weight:700;padding:2px 7px;border-radius:3px;background:var(--${prioColor[g.prio]}-b);color:var(--${prioColor[g.prio]});border:1px solid var(--${prioColor[g.prio]}-d)">${g.prio}</span></td>
+          <td style="padding:7px 10px;font-size:10.5px;color:var(--t1);font-style:italic">${g.frage}</td>
+        </tr>`).join('')}
+      </table>
     </div>
   `;
-
-  document.getElementById('missing-open').innerHTML = [
-    {yr:'2022 (Sep + Nov)', e:'Hämaturie 10 + 25 Ery/µl', s:'Keine urologische Abklärung dokumentiert · keine Folgemessung', sc:'ts'},
-    {yr:'2008', e:'ALAT 93 + ASAT 51.7 U/l (EBV-Leberreaktion)', s:'Normalisierung nicht dokumentiert · Leberparameter heute (2026) nicht gemessen', sc:'tw'},
-    {yr:'Dauerbefund', e:'MCV 80.2 seit ≥2020', s:'Nie als Untersuchungsanlass aufgegriffen — behandelnde Ärzte haben nicht nachgefragt', sc:'tw'},
-  ].map(m=>`
-    <div style="display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--bg3);align-items:flex-start">
-      <div style="font-size:10px;font-family:var(--mono);color:var(--t3);width:80px;flex-shrink:0">${m.yr}</div>
-      <div style="flex:1">
-        <div style="font-size:11px;font-weight:500;color:var(--t1);margin-bottom:2px">${m.e}</div>
-        <div style="font-size:9px;color:var(--t3)">${m.s}</div>
-      </div>
-      <span class="tag ${m.sc}">OFFEN</span>
-    </div>
-  `).join('');
 }
 
 /* ══ P4: MS ══ */
@@ -2885,7 +2907,7 @@ function initFamily(){
   svg.innerHTML=h;
 
   document.getElementById('family-risks').innerHTML = [
-    {t:'Neuroonkologisches Risiko', b:'Vater: Intrakranieller Tumor (Art unbekannt), †76J, Januar 2025. HFE-Hämochromatose + ZNS-Eisenakkumulation als möglicher Kofaktor. Familiäre Tumorprädisposition: genetisch noch nicht eingeordnet.', sc:'sig'},
+    {t:'Neuroonkologisches Risiko', b:'Vater: Intrakranieller Tumor (Art unbekannt), †76J, Januar 2025. HFE-Hämochromatose + ggf. Eisenakkumulation in Organen als möglicher Kofaktor. Familiäre Tumorprädisposition: genetisch noch nicht eingeordnet.', sc:'sig'},
     {t:'MS-Prädisposition (Neuroimmun)', b:'Schwester MS + EBV-Durchseuchung + Vit D-Mangel. Familiärer Faktor: erhöhtes Risiko 2–5-fach bei Geschwister-MS.', sc:'sig'},
     {t:'Neurodivergenz-Cluster', b:'ADHS Patient (Diagnose 38J) + Mutter (ADHS nicht diagnostiziert, offensichtliches Profil) + Tochter 1 (ADHS gesichert). Genetisch hochkonsistentes Muster.', sc:'wrn'},
     {t:'Hypermobilitäts-/Bindegewebsachse ⚑ NEU', b:'Töchter: vermehrte Verstauchungen + Bandprobleme. Tochter 1: Rückenschmerzen, Schlafprobleme, spastikähnliche Zehenreaktionen + ADHS. Cluster: Neurodivergenz + Hypermobilität + GI + Schlaf + Dysautonomie. Kein EDS-Beweis — aber strukturiertes Screening auf HSD/hEDS-assoziiertes Muster indiziert.', sc:'wrn'},
@@ -2961,52 +2983,6 @@ function initFamily(){
   `;
 } // end initFamily
 
-/* ══ P8: ACTION ══ */
-function initAction(){
-  const urgent = [
-    {n:1,t:'Hb-Elektrophorese',s:'Persistente Mikrozytose MCV 80.2 seit ≥2020 nie erklärt. Thalassämie-Träger oder andere Hb-Variante ausschliessen.',w:'Direkter Befund — kein Folgetermin notwendig',col:C.sig},
-    {n:2,t:'HFE-Genotypisierung (C282Y, H63D)',s:'Transferrin-Sättigung 49% bei Ferritin 48 — Hämochromatose-Frühzeichen. Krebspräventiv.',w:'Einmalige Blutentnahme + Gentest',col:C.sig},
-    {n:3,t:'Hämaturie-Abklärung nachholen',s:'Sep + Nov 2022: 25 Ery/µl und 10 Ery/µl. Urologisch nie abgeklärt. Ursache offen.',w:'Urinstatus + Sono Nieren + ggf. Urologie',col:C.sig},
-    {n:4,t:'Creatinin-Kontrolle + Urinstatus',s:'75→82 µmol/l (2023→2026) — mild steigend, in Referenz. CK 117 U/l = normal. Hämaturie-Kontext weiter verfolgen.',w:'In 6 Wochen wiederholen + Urinstatus',col:C.wrn},
-  ];
-  const short = [
-    {n:1,t:'Vitamin D 25-OH aktuell + Ziel &gt;60',s:'Zuletzt 2023 gemessen (30 µg/l). MS-Familienrisiko: Ziel 60–80 µg/l. Hochdosiert supplementieren.',w:'Blutentnahme + Supplementierung anpassen',col:C.wrn},
-    {n:2,t:'Homocystein + Holotranscobalamin',s:'B12 sinkend (-23% in 14 Mo.). Homocystein = Methylierungsmarker + kardiovaskulärer Risikomarker. Nie gemessen.',w:'Einmalige Blutentnahme',col:C.wrn},
-    {n:3,t:'Kortisol-Tagesprofil (4× Speichel)',s:'Chronischer Stress: Trennung Juni 2024 + Tod Vater Januar 2025 + NGO-Führung als Hochleistungskontext. HPA-Achse nie gemessen.',w:'Kann im Selbsttest zu Hause erfolgen',col:C.wrn},
-    {n:4,t:'Zink + Magnesium (erythrozytär)',s:'Nie gemessen. ADHS-Korrelation stark belegt. Serum-Mg ungeeignet — erythrozytäre Messung nötig.',w:'Spezielle Blutentnahme (auf Röhrchen hinweisen)',col:C.wrn},
-  ];
-  const therapy = [
-    {n:1,t:'Vitamin D: 4000–6000 IE täglich',s:'Ziel: 60–80 µg/l. Kontrolle nach 3 Monaten. Kombination mit Vit K2 (MK7) empfohlen.',col:C.int},
-    {n:2,t:'Holotranscobalamin: aktives B12',s:'500–1000 µg/Tag Methylcobalamin sublingual. Nicht Cyanocobalamin. 3-Monats-Kontrolle.',col:C.int},
-    {n:3,t:'Magnesium Glycinat 300–400 mg abends',s:'Beste Absorption + Schlafqualität. Nicht Magnesiumoxid (schlechte Resorption).',col:C.int},
-    {n:4,t:'Omega-3 Index messen + ggf. EPA/DHA',s:'Wenn Index &lt;8%: 2–3g EPA+DHA täglich. Kontrolle nach 4 Monaten.',col:C.int},
-  ];
-  const monitor = [
-    {n:1,t:'Ferritin + Transferrin-Sättigung halbjährlich',s:'Solange HFE ungeklärt. Bei Anstieg: Gastroenterologie / Hämatologie.',col:C.ok},
-    {n:2,t:'Vitamin D 25-OH alle 3 Monate bis Ziel erreicht',s:'Dann halbjährlich. Ziel dauerhaft 60–80 µg/l.',col:C.ok},
-    {n:3,t:'Triglyzeride + HDL',s:'Stressmarker. Jährlich oder bei neuen Belastungsphasen.',col:C.ok},
-    {n:4,t:'Creatinin jährlich',s:'Solange Trend ungeklärt. Bei weiterem Anstieg: Nephrologie.',col:C.ok},
-    {n:5,t:'EBV VCA-IgG Verlaufskontrolle',s:'Bei erhöhter Infektbelastung oder MS-Frühsymptomen: Titer vergleichen.',col:C.ok},
-    {n:6,t:'Töchter: Beighton-Score + Hypermobilitäts-Screening',s:'Vermehrte Verstauchungen/Bandprobleme + Rückenschmerzen + Schlafprobleme (Tochter 1). Screening auf HSD/hEDS-Muster — kein EDS-Beweis, aber strukturiertes Erfassen des Clusters: Hypermobilität + ADHS + GI + Dysautonomie. Zuständig: Kinderrheumatologie / Neuropädiatrie.',col:C.wrn},
-  ];
-
-  function renderActions(id, items){
-    document.getElementById(id).innerHTML = items.map(a=>`
-      <div class="action-item">
-        <div class="action-num" style="background:${rgba(a.col,.15)};border:1px solid ${rgba(a.col,.4)};color:${a.col}">${a.n}</div>
-        <div class="action-body">
-          <div class="action-title">${a.t}</div>
-          <div class="action-sub">${a.s}</div>
-          <div class="action-why">→ ${a.w}</div>
-        </div>
-      </div>
-    `).join('');
-  }
-  renderActions('action-urgent', urgent);
-  renderActions('action-short', short);
-  renderActions('action-therapy', therapy);
-  renderActions('action-monitor', monitor);
-}
 
 /* ══ P-CARDIO: KARDIOVASKULÄR & POTS ══ */
 function initCardio(){
@@ -3016,7 +2992,7 @@ function initCardio(){
       <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px">
         ${[
           ['Herzschmerz / thorakale Beschwerden','Intermittierend · Subjektiv als Herzschmerz wahrgenommen · Kardiologisch abgeklärt (Befund ausstehend / unklar)','sig'],
-          ['POTS-ähnliche Symptome','Positionale Tachykardie / Schwindel beim Aufstehen / Erschöpfung · nie formal getestet','wrn'],
+          ['autonome Regulationsauffälligkeiten','Positionale Tachykardie / Schwindel beim Aufstehen / Erschöpfung · nie formal getestet','wrn'],
           ['HRV nie gemessen','Herzratenvariabilität = direkter Stress- und ANS-Marker · Einfach mit Wearable messbar','int'],
         ].map(([t,b,c])=>`
           <div style="padding:8px 10px;background:var(--sur);border:1px solid var(--${c}-d);border-left:3px solid var(--${c});border-radius:var(--rs)">
@@ -3103,7 +3079,7 @@ function initCardio(){
             </div>
             <div style="font-size:9px;font-weight:700;color:var(--t2);margin-bottom:4px">Diagnostische Schritte (POTS)</div>
             ${[
-              ['Nasa-Lean-Test (10 Min. stehen)','einfach, im Praxissetting, ohne Ausrüstung'],
+              ['Stehtest / Nasa-Lean-Test (10 Min. stehen)','einfach, im Praxissetting, ohne Ausrüstung'],
               ['Tilt-Table-Test','Goldstandard, Kardiologie / Neurologie'],
               ['Holter + Stehtest','24h + Herzfrequenz liegend/stehend'],
               ['HRV-Messung (Wearable)','Garmin / Apple Watch → ANS-Profil'],
@@ -3124,7 +3100,7 @@ function initCardio(){
     <div style="background:var(--nv);border-radius:var(--r);padding:10px 14px;border-left:4px solid var(--gd)">
       <div style="font-size:8px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gd);margin-bottom:5px">NAVORA KARDIO-KONTEXT</div>
       <div style="font-size:11px;color:rgba(255,255,255,.9);line-height:1.7">
-        Herzschmerz bei einem 40-jährigen Hochleistungsprofil mit ADHS, chronischem Stressakkumulation (2025), POTS-ähnlichen Symptomen, Töchtern mit Gelenkinstabilität und familiärer Neuroimmunbelastung ist <strong style="color:#fff">nicht primär kardiologisch</strong> zu denken — sondern im Kontext von <strong style="color:var(--gd2)">autonomer Dysregulation + Bindegewebsachse + sympathischer Überaktivierung</strong>. Die kardiologische Abklärung sichert die Akutebene. Die funktionelle Ursache liegt wahrscheinlich auf der ANS-/POTS-/HSD-Achse.
+        Herzschmerz bei einem 40-jährigen Hochleistungsprofil mit ADHS, chronischem Stressakkumulation (2025), autonome Regulationsauffälligkeitenn Symptomen, Töchtern mit Gelenkinstabilität und familiärer Neuroimmunbelastung ist <strong style="color:#fff">nicht primär kardiologisch</strong> zu denken — sondern im Kontext von <strong style="color:var(--gd2)">autonomer Dysregulation + Bindegewebsachse + sympathischer Überaktivierung</strong>. Die kardiologische Abklärung sichert die Akutebene. Die funktionelle Ursache liegt wahrscheinlich auf der ANS-/POTS-/HSD-Achse.
       </div>
     </div>
   `;
@@ -3149,12 +3125,12 @@ function initConsilium(){
      befunde:['MCV 80.2 fl seit ≥18 Jahren (2008→2026)', 'RDW-SD 33.9 fL (homogen — Thalassämie-Muster)', 'TSAT 49% (Feb 2023) — Screening-Schwelle HFE', 'Ferritin 48 µg/l — niedrig-normal'],
      empfehlung:'Hb-Elektrophorese + HbA2/HbF + Blutausstrich. Alpha-Thal-Genetik falls Elektrophorese normal. Nüchtern TSAT wiederholen → HFE C282Y/H63D.',
      cross:'Gastroenterologie (Lebereisen), Genetik (Familienplanung), Onkologie (HCC-Risiko)'},
-    {fach:'Kardiologie / Elektrophysiologie', icon:'❤️', prio:'DRINGEND', prio_c:'sig',
-     befunde:['Intermittierender thorakaler Schmerz / Herzschmerz', 'Kardiologisch offenbar abgeklärt — Befund nicht vollständig dokumentiert', 'POTS-ähnliche Symptome (nie formal getestet)', 'Tilt-Table-Test fehlt', 'Holter-EKG fehlt'],
-     empfehlung:'Tilt-Table-Test (POTS-Goldstandard). Holter-24h. Echokardiographie (HSD: Aortenwurzel). ApoB + Lp(a). Nasa-Lean-Test sofort in Praxis.',
+    {fach:'Kardiologie / Elektrophysiologie', icon:'❤️', prio:'Ausstehend', prio_c:'sig',
+     befunde:['Intermittierender thorakaler Schmerz / Herzschmerz', 'Kardiologisch offenbar abgeklärt — Befund nicht vollständig dokumentiert', 'autonome Regulationsauffälligkeiten (nie formal getestet)', 'Tilt-Table-Test fehlt', 'Holter-EKG fehlt'],
+     empfehlung:'Tilt-Table-Test (Goldstandard für Stehregulation). Holter-24h. Echokardiographie (HSD: Aortenwurzel). ApoB + Lp(a). Stehtest / Nasa-Lean-Test sofort in Praxis.',
      cross:'Neurologie (autonome Dysfunktion), Rheumatologie (HSD), Endokrinologie (Adrenale POTS-Formen)'},
     {fach:'Neurologie / Neuroimmunologie', icon:'🧠', prio:'PRIORITÄT 2', prio_c:'wrn',
-     befunde:['Schwester: Multiple Sklerose → Familienrisiko ×2–5', 'EBV 2008 (Science 2022: MS-Risiko ×32)', 'Vit D chronisch 30 µg/l (Ziel >50–80 bei MS-FA)', 'Keine MS-Screening-MRT bisher dokumentiert'],
+     befunde:['Schwester: Multiple Sklerose → Familienrisiko ×2–5', 'EBV 2008 (Science 2022: MS-erhöhtes Erkrankungsrisiko laut Bjornevik et al. 2022)', 'Vit D chronisch 30 µg/l (Ziel >50–80 bei MS-FA)', 'Keine MS-Screening-MRT bisher dokumentiert'],
      empfehlung:'Vit D auf >60 µg/l bringen (4000–6000 IE/d). Neurologisches Screening bei Frühsymptomen (Sensibilitätsstörungen, Sehstörungen, Fatigue). MRT cMRT + Wirbelsäule diskutieren.',
      cross:'Hämatologie (EBV-Reaktivierung), Immunologie (Thymus-Suppression), Ophthalmologie (Optikusneuritis)'},
     {fach:'Rheumatologie / Bindegewebe', icon:'🦴', prio:'PRIORITÄT 2', prio_c:'wrn',
@@ -3210,7 +3186,7 @@ function initConsilium(){
       <div class="card-body-sm">
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
           ${[
-            {t:'POTS + HSD + ADHS',b:'„Trifecta" — in der Fachliteratur zunehmend beschrieben. Alle drei Familienmitglieder zeigen Teilkomponenten. Bindegewebe erklärt ANS-Dysfunktion erklärt Kognition.','c':'wrn'},
+            {t:'POTS + HSD + ADHS',b:'„bekanntes Komorbiditätsmuster" — in der Fachliteratur zunehmend beschrieben. Alle drei Familienmitglieder zeigen Teilkomponenten. Bindegewebe erklärt ANS-Dysfunktion erklärt Kognition.','c':'wrn'},
             {t:'EBV + MS + Vit D + Stress',b:'Kausalkette dokumentiert. Vit D unter Schutzgrenze + EBV latent + Stress → Reaktivierung → molekulare Mimikry → Neuroinflammation.','c':'sig'},
             {t:'Thalassämie + HFE + Lebereisen',b:'Zwei parallele Hämatologieachsen. Thal-Trait: homogene Mikrozytose. HFE: Eisenspeicherung. Beide gleichzeitig möglich, beides nie abgeklärt.','c':'sig'},
             {t:'ADHS-Kompensation + HPA + Herz',b:'Dauerhochleistung ohne Medi → Sympathikusdominanz → Kortisol dauerhaft erhöht → Triglyzeride, Herzschmerz, Immunsuppression, Infektanfälligkeit.','c':'wrn'},
@@ -3236,8 +3212,8 @@ function initConsilium(){
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px">
         ${[
           ['⑴ Genetisch-hämatologisch','Thalassämie-Trait + HFE — beide nicht abgeklärt, beide potentiell bedeutsam für dich und deine Töchter'],
-          ['⑵ Neuroimmunologisch','EBV + Schwester MS + Vit D-Defizit = vollständige Risikotrias — konkret adressierbar'],
-          ['⑶ Kardioautonom','Herzschmerz + POTS-ähnliche Symptome + HRV unbekannt — Abklärungsbedarf klar benennbar'],
+          ['⑵ Neuroimmunologisch','EBV + Schwester MS + Vit D-Defizit = dokumentierte neuroimmunologische Konstellation — konkret adressierbar'],
+          ['⑶ Kardioautonom','Herzschmerz + autonome Regulationsauffälligkeiten + HRV unbekannt — Abklärungsbedarf klar benennbar'],
           ['⑷ Neurodivergent-kompensatorisch','ADHS ohne Medikation, hohe interne Kompensationskosten, kumulative Stressachse 2025 — systemisch einzuordnen, nicht zu pathologisieren'],
         ].map(([t,b])=>`
           <div style="padding:9px 11px;background:rgba(255,255,255,.06);border-radius:var(--rs);border-left:2px solid var(--gd)">
@@ -3262,6 +3238,15 @@ function initConsilium(){
 }
 
 function labTab(el, id){
+  const descs = {
+    'lt-outliers': 'Welche Werte fallen aus dem Verlauf heraus oder zeigen eine wiederholte Richtung?',
+    'lt-stress': 'Welche Laborveränderungen fallen zeitlich mit Lebensereignissen, Infekten, Stressphasen oder Belastungsänderungen zusammen?',
+    'lt-ctx': 'Drei Ebenen: akutmedizinisch · diagnostisch sinnvoll · präventiv/reserveorientiert',
+    'lt-cluster': 'Welche Werte gehören zur selben Systemachse — z. B. Hämatologie, Eisen, B12/Folat, Vitamin D, GI, Metabolik?',
+    'lt-radar': 'Modifizierbare Reservefaktoren und offene Abklärungsfelder — keine Diagnosewahrscheinlichkeit.',
+  };
+  const d = document.getElementById('lab-tab-desc');
+  if(d && descs[id]) d.textContent = descs[id];
   document.querySelectorAll('#lt-out-btn,#lt-str-btn,#lt-ctx-btn,#lt-clu-btn,#lt-rad-btn').forEach(t=>t.classList.remove('on'));
   document.querySelectorAll('#lt-outliers,#lt-stress,#lt-ctx,#lt-cluster,#lt-radar').forEach(p=>p.classList.remove('active'));
   el.classList.add('on');
@@ -3277,10 +3262,10 @@ function labTab(el, id){
 function initPatterns(){
   const PATTERNS=[
     {n:'Thalassämie-Trait-Muster',icon:'🩸',conf:82,cl:'Wahrscheinlich',col:'sig',ev:['MCV 80.2 fl seit 18+ Jahren stabil','RDW-SD 33.9 — homogene Mikrozytose','Hb normal (keine Anämie)','Mutter aschkenasisch — Thalassämie möglich'],cl_txt:'Homogene Mikrozytose ohne Anämie = Thalassämia minor Muster. Unter Hochlast reduzierte Sauerstoffkapazität. Töchter 50% Trägerrisiko.',act:'Hb-Elektrophorese · HbA2/HbF · Alpha-Thal-Genetik'},
-    {n:'HFE/Hämochromatose-Screening',icon:'⚗️',conf:55,cl:'Abzuklären',col:'wrn',ev:['TSAT 49% (Feb 2023) — über Grenze 45%','Ferritin 48 (noch normal)','CH-väterliche Linie: HFE häufig','Nüchtern-Status 2023 unbekannt'],cl_txt:'TSAT ≥45% nüchtern = Indikation HFE-Genotypisierung. Frühstadium wenn Ferritin noch niedrig-normal. Vater Gehirntumor: ZNS-Eisenakkumulation als möglicher Kofaktor.',act:'TSAT nüchtern wiederholen → HFE C282Y/H63D'},
-    {n:'MS-Risikotrias (vollständig)',icon:'🧠',conf:91,cl:'Dokumentiert',col:'sig',ev:['Schwester MS → Familienrisiko ×2–5','EBV 2008 (VCA-IgG 1:320) → Risiko ×32 (Science 2022)','Vit D chronisch 30 µg/l — Schutzbereich >50 nie erreicht'],cl_txt:'Alle drei Faktoren nachgewiesen. Kein aktiver MS-Befund — aber kein MRI. Vit D einziger direkt modifizierbarer Faktor.',act:'Vit D auf ≥60 µg/l · Neurologisches Frühscreening'},
+    {n:'HFE/Hämochromatose-Screening',icon:'⚗️',conf:55,cl:'Abzuklären',col:'wrn',ev:['TSAT 49% (Feb 2023) — über Grenze 45%','Ferritin 48 (noch normal)','CH-väterliche Linie: HFE häufig','Nüchtern-Status 2023 unbekannt'],cl_txt:'TSAT ≥45% nüchtern = Indikation HFE-Genotypisierung. Frühstadium wenn Ferritin noch niedrig-normal. Vater Gehirntumor: ggf. Eisenakkumulation in Organen als möglicher Kofaktor.',act:'TSAT nüchtern wiederholen → HFE C282Y/H63D'},
+    {n:'neuroimmunologische Konstellation (vollständig)',icon:'🧠',conf:91,cl:'Dokumentiert',col:'sig',ev:['Schwester MS → Familienrisiko ×2–5','EBV 2008 (VCA-IgG 1:320) → erhöhtes Erkrankungsrisiko laut Bjornevik et al. 2022 (Science 2022)','Vit D chronisch 30 µg/l — Schutzbereich >50 nie erreicht'],cl_txt:'Alle drei Faktoren nachgewiesen. Kein aktiver MS-Befund — aber kein MRI. Vit D einziger direkt modifizierbarer Faktor.',act:'Vit D auf ≥60 µg/l · Neurologisches Frühscreening'},
     {n:'Metabolisch-Stress-Muster',icon:'💥',conf:78,cl:'Plausibel',col:'wrn',ev:['Triglyzeride ×2.5 in 14 Mo.','HDL gesunken','Trennung Jun 2024 + Tod Vater Jan 2025','ADHS ohne Medi: Kompensationslast','HPA-Achse nie gemessen'],cl_txt:'Klassische metabolische Stressreaktion unter Kortisol-Chronifizierung. ADHS + Hochleistungskontext = Sympathikusdominanz. GI-Verstärkerkreis.',act:'Nüchtern-Lipidprofil + ApoB · Kortisol-Tagesprofil'},
-    {n:'POTS/Autonome Dysregulation',icon:'❤️',conf:45,cl:'Screening nötig',col:'int',ev:['Intermittierender Herzschmerz (abgeklärt)','POTS-like nie formal getestet','Töchter: Gelenkinstabilität','ADHS: Sympathikusdominanz','Biofeedback in Evaluation'],cl_txt:'POTS tritt häufig mit HSD/EDS + ND auf ("Trifecta"). Herzschmerz möglicherweise funktionell-autonom. Tilt-Table fehlt.',act:'Nasa-Lean-Test · Tilt-Table · Holter · HRV'},
+    {n:'POTS/Autonome Dysregulation',icon:'❤️',conf:45,cl:'Screening nötig',col:'int',ev:['Intermittierender Herzschmerz (abgeklärt)','autonome Regulationsauffälligkeiten nie formal getestet','Töchter: Gelenkinstabilität','ADHS: Sympathikusdominanz','Biofeedback in Evaluation'],cl_txt:'POTS tritt häufig mit HSD/EDS + ND auf ("bekanntes Komorbiditätsmuster"). Herzschmerz möglicherweise funktionell-autonom. Tilt-Table fehlt.',act:'Stehtest / Nasa-Lean-Test · Tilt-Table · Holter · HRV'},
     {n:'GI-Resorptionsachse',icon:'🌿',conf:60,cl:'Klinisch plausibel',col:'int',ev:['GI-Abklärung 2023 (deutet auf Symptome)','Laktose heterozygot','HoloTC –23%','Mg/Zn/Omega-3 nie gemessen','Chronischer Stress → Stressdarm'],cl_txt:'Negative Standardtests schliessen funktionelle Malabsorption und SIBO nicht aus. GI-Verstärkerkreis bei ADHS gut belegt.',act:'Calprotectin · H.pylori · Mg/Zn/Omega-3'},
   ];
   const pi=document.getElementById('patterns-intro'), pg=document.getElementById('patterns-grid'), pge=document.getElementById('patterns-genetic');
@@ -3313,7 +3298,7 @@ function initPatterns(){
       </div>
     </div>
   `).join('');
-  if(pge) pge.innerHTML=`<div class="card" style="border-color:var(--unk-d)"><div class="card-hd"><div class="card-hd-dot" style="background:var(--unk)"></div><span class="card-hd-title">Genetische Vulnerabilität — Prävention &amp; Früherkennung vor Aktivierung</span></div><div class="card-body-sm"><div style="font-size:12px;color:var(--t2);margin-bottom:12px;line-height:1.6">Genetische Prädispositionen werden häufig erst durch Trigger (Stress, Infekte, Umwelt) aktiviert. Ziel des CIP: diese Muster erkennen, bevor die Aktivierung stattfindet.</div><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px">${[{n:'MS-Prädisposition',t:'EBV-Reaktivierung unter Stress + Vit D-Mangel',p:'Vit D >60 · Stressreduktion · EBV-Monitoring',c:'sig'},{n:'Ashkenazi BRCA1/2',t:'Mutter aschkenasisch-jüdisch — nie gescreent',p:'BRCA1/2-Screening (Patient + Töchter)',c:'wrn'},{n:'HFE Hämochromatose',t:'TSAT 49% + CH-väterlich — HFE C282Y häufig',p:'Nüchtern-TSAT + HFE-Genotyp rechtzeitig',c:'wrn'},{n:'Neurodivergenz-Cluster',t:'ADHS aktiv. Familie: 4 weitere undiagnostiziert',p:'KVT · Psychoedukation · Energiemanagement',c:'int'},{n:'POTS/HSD-Trifecta',t:'Herzschmerz + ND + Töchter Gelenkinstabilität',p:'Beighton · Tilt-Table · HRV-Monitoring',c:'int'},{n:'GI-Resorption',t:'ADHS + Stress → Stressdarm → Absorption ↓',p:'GI-Screening · Stressmanagement · Mikronährstoffe',c:'int'}].map(g=>`<div style="padding:10px 12px;background:var(--${g.c}-b);border:1px solid var(--${g.c}-d);border-left:3px solid var(--${g.c});border-radius:var(--r)"><div style="font-size:12px;font-weight:700;color:var(--${g.c});margin-bottom:6px">${g.n}</div><div style="font-size:10px;color:var(--t2);margin-bottom:4px"><strong>Trigger:</strong> ${g.t}</div><div style="font-size:11px;color:var(--t1);font-weight:500">→ ${g.p}</div></div>`).join('')}</div></div></div>`;
+  if(pge) pge.innerHTML=`<div class="card" style="border-color:var(--unk-d)"><div class="card-hd"><div class="card-hd-dot" style="background:var(--unk)"></div><span class="card-hd-title">Genetische Vulnerabilität — Prävention &amp; Früherkennung vor Aktivierung</span></div><div class="card-body-sm"><div style="font-size:12px;color:var(--t2);margin-bottom:12px;line-height:1.6">Genetische Prädispositionen werden häufig erst durch Trigger (Stress, Infekte, Umwelt) aktiviert. Ziel des CIP: diese Muster erkennen, bevor die Aktivierung stattfindet.</div><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px">${[{n:'MS-Prädisposition',t:'EBV-Reaktivierung unter Stress + Vit D-Mangel',p:'Vit D >60 · Stressreduktion · EBV-Monitoring',c:'sig'},{n:'Ashkenazi BRCA1/2',t:'Mutter aschkenasisch-jüdisch — nie gescreent',p:'BRCA1/2-Screening (Patient + Töchter)',c:'wrn'},{n:'HFE Hämochromatose',t:'TSAT 49% + CH-väterlich — HFE C282Y häufig',p:'Nüchtern-TSAT + HFE-Genotyp rechtzeitig',c:'wrn'},{n:'Neurodivergenz-Cluster',t:'ADHS aktiv. Familie: 4 weitere undiagnostiziert',p:'KVT · Psychoedukation · Energiemanagement',c:'int'},{n:'POTS/HSD-bekanntes Komorbiditätsmuster',t:'Herzschmerz + ND + Töchter Gelenkinstabilität',p:'Beighton · Tilt-Table · HRV-Monitoring',c:'int'},{n:'GI-Resorption',t:'ADHS + Stress → Stressdarm → Absorption ↓',p:'GI-Screening · Stressmanagement · Mikronährstoffe',c:'int'}].map(g=>`<div style="padding:10px 12px;background:var(--${g.c}-b);border:1px solid var(--${g.c}-d);border-left:3px solid var(--${g.c});border-radius:var(--r)"><div style="font-size:12px;font-weight:700;color:var(--${g.c});margin-bottom:6px">${g.n}</div><div style="font-size:10px;color:var(--t2);margin-bottom:4px"><strong>Trigger:</strong> ${g.t}</div><div style="font-size:11px;color:var(--t1);font-weight:500">→ ${g.p}</div></div>`).join('')}</div></div></div>`;
 }
 
 function initReasoning(){
@@ -3484,7 +3469,7 @@ function initLabStress(){
       <div style="padding:12px 14px;background:var(--wrn-b);border:1px solid var(--wrn-d);border-left:3px solid var(--wrn);border-radius:var(--r)">
         <div style="font-size:12px;font-weight:700;color:var(--wrn);margin-bottom:7px">⟳ EBV 2008 — Biologischer Wendepunkt?</div>
         <div style="font-size:12px;color:var(--t2);line-height:1.65">
-          EBV mit 22J: Leberreaktion, VCA-IgG 1:320 — seither latent persistierend. Science 2022 (Bjornevik): EBV als wahrscheinlichste Ursache von MS (Risiko ×32). Unter chronischem Stress kann latenter EBV reaktivieren. Zeitlinie: EBV 2008 → erste Messung 2021 → Stressmessung 2023 → Trennung 2024 → Tod Vater 2025. <strong>Kein EBV-Monitoring seither.</strong>
+          EBV mit 22J: Leberreaktion, VCA-IgG 1:320 — seither latent persistierend. Science 2022 (Bjornevik): EBV als wahrscheinlichste Ursache von MS (erhöhtes Erkrankungsrisiko laut Bjornevik et al. 2022). Unter chronischem Stress kann latenter EBV reaktivieren. Zeitlinie: EBV 2008 → erste Messung 2021 → Stressmessung 2023 → Trennung 2024 → Tod Vater 2025. <strong>Kein EBV-Monitoring seither.</strong>
         </div>
       </div>
     </div>
@@ -3493,20 +3478,85 @@ function initLabStress(){
 
 function initLabCtx(){
   const el=document.getElementById('lab-ctx-content');if(!el)return;
-  const rows=[{b:'MCV 80.2 fl (seit 2008)',a1:'Keine Anämie — Hb 14.5',a2:'Thalassämia minor. Hb-Elektrophorese + Alpha-Thal-Genetik.',a3:'Sauerstoffkapazität unter Hochlast reduziert. Töchter 50% Trägerrisiko.'},{b:'TSAT 49% (Feb 2023)',a1:'Keine Organschäden bekannt',a2:'Nüchtern wiederholen → HFE C282Y/H63D wenn >45%.',a3:'ZNS-Eisenakkumulation, Leber, Herz. Vater Gehirntumor.'},{b:'Vit D 30 µg/l',a1:'Über Mindestwert >20',a2:'MS-FA Schutzbereich >50–80 µg/l. Nie erreicht.',a3:'Reduzierte immunologische Reserve.'},{b:'HoloTC 57→44 (–23%)',a1:'Beide formal >35 pmol/l',a2:'Trend relevant. MMA + Homocystein + Folat ergänzen.',a3:'Myelinisierung, Methylierung. Sinkt weiter: Intrinsic-Factor-AK.'},{b:'Triglyzeride 2.06 mmol/l',a1:'Einmalig, kein CRP-Muster',a2:'Nüchtern? Stresslast 2023. ApoB + Lp(a) + HOMA-IR.',a3:'Metabolisches Stresssignal.'},{b:'Hämaturie 2022',a1:'Nicht persistierend dok.',a2:'2× signifikant. Nie urologisch abgeklärt.',a3:'ACQ + Sediment + eGFR. Urologie überfällig.'},{b:'Creatinin 72→82 µmol/l',a1:'In Referenz (53–115)',a2:'Mild steigend +14%. CK 117 normal.',a3:'eGFR berechnen. Hämaturie-Kontext.'}];
+  const rows=[{b:'MCV 80.2 fl (seit 2008)',a1:'Keine Anämie — Hb 14.5',a2:'Thalassämia minor. Hb-Elektrophorese + Alpha-Thal-Genetik.',a3:'Sauerstoffkapazität unter Hochlast reduziert. Töchter 50% Trägerrisiko.'},{b:'TSAT 49% (Feb 2023)',a1:'Keine Organschäden bekannt',a2:'Nüchtern wiederholen → HFE C282Y/H63D wenn >45%.',a3:'ggf. Eisenakkumulation in Organen, Leber, Herz. Vater Gehirntumor.'},{b:'Vit D 30 µg/l',a1:'Über Mindestwert >20',a2:'MS-FA Schutzbereich >50–80 µg/l. Nie erreicht.',a3:'Reduzierte immunologische Reserve.'},{b:'HoloTC 57→44 (–23%)',a1:'Beide formal >35 pmol/l',a2:'Trend relevant. MMA + Homocystein + Folat ergänzen.',a3:'Myelinisierung, Methylierung. Sinkt weiter: Intrinsic-Factor-AK.'},{b:'Triglyzeride 2.06 mmol/l',a1:'Einmalig, kein CRP-Muster',a2:'Nüchtern? Stresslast 2023. ApoB + Lp(a) + HOMA-IR.',a3:'Metabolisches Stresssignal.'},{b:'Hämaturie 2022',a1:'Nicht persistierend dok.',a2:'2× signifikant. Nie urologisch abgeklärt.',a3:'ACQ + Sediment + eGFR. Urologie überfällig.'},{b:'Creatinin 72→82 µmol/l',a1:'In Referenz (53–115)',a2:'Mild steigend +14%. CK 117 normal.',a3:'eGFR berechnen. Hämaturie-Kontext.'}];
   el.innerHTML=`<div class="card"><div class="card-hd"><div class="card-hd-dot" style="background:var(--nv)"></div><span class="card-hd-title">Drei-Ebenen-Kontextualisierung</span></div><div class="card-body-sm"><table style="width:100%;border-collapse:collapse;font-size:11px"><tr style="background:var(--sur2)"><th style="padding:7px 9px;text-align:left;font-size:9px;color:var(--t3);border-bottom:1px solid var(--bd);width:20%">Befund</th><th style="padding:7px 9px;font-size:9px;color:var(--ok);border-bottom:1px solid var(--bd);width:24%">✓ Akutsicherheit</th><th style="padding:7px 9px;font-size:9px;color:var(--wrn);border-bottom:1px solid var(--bd);width:28%">⊡ Diagnostik</th><th style="padding:7px 9px;font-size:9px;color:var(--sig);border-bottom:1px solid var(--bd);width:28%">⚑ Präventive Reserve</th></tr>${rows.map(r=>`<tr style="border-bottom:1px solid var(--bg3)"><td style="padding:7px 9px;font-weight:500;color:var(--t1)">${r.b}</td><td style="padding:7px 9px;color:var(--ok);background:var(--ok-b)">${r.a1}</td><td style="padding:7px 9px;color:var(--t2);background:var(--wrn-b)">${r.a2}</td><td style="padding:7px 9px;color:var(--t2);background:var(--sig-b)">${r.a3}</td></tr>`).join('')}</table></div></div>`;
 }
 
 function initLabCluster(){
   const el=document.getElementById('lab-cluster-content');if(!el)return;
-  el.innerHTML=`<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px">${[{t:'Hämatologisch',b:'MCV + Ferritin + TSAT + Thalassämie → Hb-Elektrophorese + HFE',c:'sig'},{t:'Neuroimmunologisch',b:'EBV + Vit D + MS-FA → vollständige Risikotrias',c:'wrn'},{t:'ADHS-Stress-GI',b:'ADHS + Stress 2024/25 + Darm + HoloTC → systemische Depletion',c:'int'},{t:'Kardio-Autonom',b:'Herzschmerz + POTS-like + HRV nie gemessen → ANS-Dysregulation',c:'sig'},{t:'Ashkenazi-Genetik',b:'Mutter aschkenasisch → BRCA1/2 + familienspez. Risiken',c:'unk'},{t:'Hypermobilität-ND',b:'Töchter Bandprobleme + ADHS + POTS → HSD-Screening',c:'wrn'}].map(x=>`<div style="padding:11px 13px;background:var(--sur);border:1px solid var(--${x.c}-d);border-left:3px solid var(--${x.c});border-radius:var(--r)"><div style="font-size:12px;font-weight:600;color:var(--${x.c});margin-bottom:5px">${x.t}</div><div style="font-size:11px;color:var(--t2);line-height:1.5">${x.b}</div></div>`).join('')}</div>`;
+  el.innerHTML=`<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px">${[{t:'Hämatologisch',b:'MCV + Ferritin + TSAT + Thalassämie → Hb-Elektrophorese + HFE',c:'sig'},{t:'Neuroimmunologisch',b:'EBV + Vit D + MS-FA → dokumentierte neuroimmunologische Konstellation',c:'wrn'},{t:'ADHS-Stress-GI',b:'ADHS + Stress 2024/25 + Darm + HoloTC → systemische Depletion',c:'int'},{t:'Kardio-autonome Achse',b:'Herzschmerz + autonome Regulationsauffälligkeiten + HRV nie gemessen → ANS-Dysregulation',c:'sig'},{t:'Ashkenazi-Genetik',b:'Mutter aschkenasisch → genetische Beratung bei ärztlicher Indikation',c:'unk'},{t:'Hypermobilität-ND',b:'Töchter Bandprobleme + ADHS + autonome Dysregulation + Hypermobilität → Screening sinnvoll',c:'wrn'}].map(x=>`<div style="padding:11px 13px;background:var(--sur);border:1px solid var(--${x.c}-d);border-left:3px solid var(--${x.c});border-radius:var(--r)"><div style="font-size:12px;font-weight:600;color:var(--${x.c});margin-bottom:5px">${x.t}</div><div style="font-size:11px;color:var(--t2);line-height:1.5">${x.b}</div></div>`).join('')}</div>`;
 }
 
 function initRadar(){
   safeChart('c-radar',{type:'radar',data:{labels:['Hämatologie','Neuroimmun.','Kardiovaskulär','GI/Resorption','Stress/HPA','Renal'],datasets:[{label:'Aktuell',data:[65,72,50,55,70,30],backgroundColor:rgba(C.sig,.1),borderColor:rgba(C.sig,.55),borderWidth:1.8,pointBackgroundColor:C.sig,pointRadius:3},{label:'Mit Prävention',data:[25,35,30,30,40,20],backgroundColor:rgba(C.ok,.06),borderColor:rgba(C.ok,.35),borderWidth:1,pointBackgroundColor:C.ok,pointRadius:2}]},options:{responsive:true,maintainAspectRatio:false,animation:{duration:300},scales:{r:{min:0,max:100,ticks:{color:C.t3,backdropColor:'transparent',font:{size:9},stepSize:25},grid:{color:'rgba(180,170,155,.3)'},pointLabels:{color:C.t2,font:{size:11,family:'DM Sans'}}}},plugins:{legend:{display:true,position:'bottom',labels:{color:C.t2,font:{size:11},boxWidth:10,padding:8}}}}});
 }
 
-/* ══ AUTOSAVE + STARTUP — after all consts defined ══ */
+/* ══ ARZTBRIEFING / KURZVERSION ══ */
+function initAction(){
+  // Update page sub-title defensively
+  const ph = document.querySelector('#p-action .ph-sub');
+  if(ph) ph.textContent = 'Priorisierte Gesprächsgrundlage · keine Diagnosebehauptung · für Fachkonsultationen';
+
+  renderActions();
+
+  // ── 1-Minuten-Arztansicht ──
+  const az = document.getElementById('arzt-briefing');
+  if(az) az.innerHTML = `
+    <div class="card" style="border-color:var(--nv)">
+      <div class="card-hd" style="background:var(--nv)">
+        <span class="card-hd-title" style="color:#fff;font-size:13px">1-Minuten-Arztansicht — 8 offene Abklärungsfragen</span>
+        <span style="margin-left:auto;font-size:10px;color:rgba(255,255,255,.6)">Keine Diagnosebehauptung · kooperative Gesprächsgrundlage</span>
+      </div>
+      <div style="padding:12px 14px">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+          ${[
+            ['1', 'Mikrozytose einordnen', 'Kann die seit Jahren persistierende Mikrozytose (MCV 80.2 fl, stabil seit 2008) hämatologisch eingeordnet werden? Hb-Elektrophorese mit HbA2/HbF und ggf. Alpha-Thalassämie-Abklärung sinnvoll?'],
+            ['2', 'Eisenstatus nüchtern', 'Sollte der Eisenstatus nüchtern wiederholt werden (Ferritin, Eisen, Transferrin, Transferrinsättigung, CRP)? TSAT 49% war einmalig — Nüchternstatus unbekannt.'],
+            ['3', 'Mikronährstoffe prüfen', 'Sind Vitamin D, B12/HoloTC, MMA, Homocystein, Folat, Magnesium und Zink im Kontext von ADHS, Stress, GI-Beschwerden und familiärer MS sinnvoll zu ergänzen?'],
+            ['4', 'Frühere Mikrohämaturie', 'Wurde die Mikrohämaturie von 2022 abschliessend geklärt? Sonst: Morgenurin, Sediment und Albumin/Kreatinin-Quotient zur Verlaufskontrolle sinnvoll.'],
+            ['5', 'Kardio-autonome Achse', 'Wiederkehrende herznahe Schmerzen trotz unauffälliger Kardiologie — sinnvoll hinsichtlich Dysautonomie, Brustwand/BWS, GI/Reflux-Achse zu differenzieren?'],
+            ['6', 'Erschöpfung ohne CRP-Anstieg', 'Welche Basisabklärung ist bei verlängerter Infekt- oder Erschöpfungssymptomatik ohne CRP-Anstieg angemessen?'],
+            ['7', 'Hypermobilitäts-Screening Familie', 'Töchter mit vermehrten Verstauchungen/Bandproblemen — Screening auf generalisierte Hypermobilität (Beighton-Score) sinnvoll?'],
+            ['8', 'ADHS ohne Medikation', 'ADHS diagnostiziert, Medikation versucht (Nebenwirkungen) — welche nicht-medikamentösen Optionen (KVT, Biofeedback, rTMS) wären im Kontext empfehlenswert?'],
+          ].map(([n, t, d]) => `
+            <div style="padding:9px 12px;background:var(--sur);border:1px solid var(--bd);border-left:3px solid var(--nv);border-radius:var(--rs)">
+              <div style="display:flex;align-items:center;gap:7px;margin-bottom:4px">
+                <span style="font-size:9px;font-weight:700;padding:1px 6px;border-radius:3px;background:var(--nv);color:#fff">${n}</span>
+                <span style="font-size:11px;font-weight:600;color:var(--nv)">${t}</span>
+              </div>
+              <div style="font-size:11px;color:var(--t2);line-height:1.5">${d}</div>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    </div>
+  `;
+
+  // ── Patientenkurzversion in einfacher Sprache ──
+  const kz = document.getElementById('patient-kurzversion');
+  if(kz) kz.innerHTML = `
+    <div class="card">
+      <div class="card-hd"><div class="card-hd-dot" style="background:var(--gd)"></div>
+        <span class="card-hd-title">In einfachen Worten — was bedeutet das?</span>
+      </div>
+      <div style="padding:12px 14px;display:grid;grid-template-columns:1fr 1fr;gap:10px">
+        ${[
+          ['🔴 Die roten Blutkörperchen sind seit Jahren eher klein', 'aber der Blutfarbstoff ist normal. Das ist meistens kein Notfall, sollte aber einmal sauber eingeordnet werden.'],
+          ['🟡 Einige Nährstoffwerte waren formal normal', 'aber nicht besonders robust. Das ist bei Stress, ADHS, GI-Themen und familiärer MS wichtiger als bei einer unbelasteten Person.'],
+          ['🟢 Es gibt keine Diagnosebehauptung', 'Das Ziel ist nicht, Krankheiten zu suchen. Das Ziel ist, einfache und vermeidbare Belastungsfaktoren nicht zu übersehen.'],
+          ['🔵 Die Familiendaten sind relevant', 'weil sie zeigen, wo erhöhte Aufmerksamkeit für präventive Schritte sinnvoll ist — nicht weil eine Erkrankung zu erwarten ist.'],
+        ].map(([t, b]) => `
+          <div style="padding:9px 12px;background:var(--sur);border:1px solid var(--bd);border-radius:var(--rs)">
+            <div style="font-size:12px;font-weight:600;color:var(--t1);margin-bottom:4px">${t}</div>
+            <div style="font-size:11px;color:var(--t2);line-height:1.5">${b}</div>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `;
+}
+
+/* ══ STARTUP — after all consts and functions defined ══ */
 try {
   document.querySelectorAll('[data-key][contenteditable]').forEach(function(el){
     var k='navora-cip-'+el.dataset.key;
