@@ -128,8 +128,15 @@ html,body{height:100%;background:var(--bg);color:var(--t1);font-family:var(--san
 
 canvas{display:block}
 
+/* ══ LAB SUB-TABS ══ */
+.ctab{padding:7px 14px;font-size:11px;font-weight:600;cursor:pointer;border-radius:5px;border:1px solid var(--bd);color:var(--t3);background:var(--sur2);transition:all .15s;user-select:none;white-space:nowrap}
+.ctab.on{background:var(--nv);color:#fff;border-color:var(--nv)}
+.ctab:hover:not(.on){border-color:var(--nv);color:var(--nv)}
+.cpanel{display:none!important}
+.cpanel.active{display:flex!important;flex-direction:column;gap:10px}
+.card-body-sm{padding:10px 13px}
+.card-body{padding:12px 13px}
 /* ══ PATIENTENINFO SUB-TABS ══ */
-.pt-sub-tabs{display:flex;gap:4px;padding:0 0 12px 0;margin-bottom:14px;border-bottom:2px solid var(--bd);flex-wrap:wrap}
 .pt-sub-tab{padding:7px 14px;font-size:11px;font-weight:600;color:var(--t3);cursor:pointer;border-radius:4px;border:1px solid var(--bd);background:var(--sur2);white-space:nowrap;transition:all .15s;user-select:none}
 .pt-sub-tab:hover{border-color:var(--gd-bd);color:var(--gd);background:var(--gd-bg)}
 .pt-sub-tab.active{background:var(--nv);border-color:var(--nv);color:#fff;font-weight:700}
@@ -483,19 +490,19 @@ canvas{display:block}
       <div class="ctab" id="lt-clu-btn" onclick="labTab(this,'lt-cluster')">🕸 Biomarker-Cluster</div>
       <div class="ctab" id="lt-rad-btn" onclick="labTab(this,'lt-radar')">📡 Risiko-Radar</div>
     </div>
-    <div class="cpanel active" id="lt-outliers" style="display:flex;flex-direction:column;gap:10px">
+    <div class="cpanel active" id="lt-outliers">
       <div id="lab-outlier-content"></div>
     </div>
-    <div class="cpanel" id="lt-stress" style="display:flex;flex-direction:column;gap:10px">
+    <div class="cpanel" id="lt-stress">
       <div id="lab-stress-content"></div>
     </div>
-    <div class="cpanel" id="lt-ctx" style="display:flex;flex-direction:column;gap:10px">
+    <div class="cpanel" id="lt-ctx">
       <div id="lab-ctx-content"></div>
     </div>
-    <div class="cpanel" id="lt-cluster" style="display:flex;flex-direction:column;gap:10px">
+    <div class="cpanel" id="lt-cluster">
       <div id="lab-cluster-content"></div>
     </div>
-    <div class="cpanel" id="lt-radar" style="display:flex;flex-direction:column;gap:10px">
+    <div class="cpanel" id="lt-radar">
       <div style="position:relative;height:280px"><canvas id="c-radar"></canvas></div>
     </div>
   </div>
@@ -2110,7 +2117,7 @@ function initPage(pid){
   const fns = {
     'p-overview': initOverview,
     'p-patient': ()=>{},
-    'p-lab': initLab,
+    'p-lab': function(){ initLab(); setTimeout(initLabFirst, 100); },
     'p-missing': initMissing,
     'p-ms': initMS,
     'p-iron': initIron,
@@ -2129,19 +2136,7 @@ function initPage(pid){
   }
 }
 
-function labTab(el, id){
-  document.querySelectorAll('#lt-out-btn,#lt-str-btn,#lt-ctx-btn,#lt-clu-btn,#lt-rad-btn').forEach(t=>t.classList.remove('on'));
-  document.querySelectorAll('#lt-outliers,#lt-stress,#lt-ctx,#lt-cluster,#lt-radar').forEach(p=>p.classList.remove('active'));
-  el.classList.add('on');
-  const pane = document.getElementById(id);
-  if(pane){ pane.classList.add('active'); }
-  // Lazy init content
-  if(id==='lt-outliers' && !window._ltOutInit){ window._ltOutInit=true; initLabOutliers(); }
-  if(id==='lt-stress' && !window._ltStrInit){ window._ltStrInit=true; initLabStress(); }
-  if(id==='lt-ctx' && !window._ltCtxInit){ window._ltCtxInit=true; initLabCtx(); }
-  if(id==='lt-cluster' && !window._ltCluInit){ window._ltCluInit=true; initLabCluster(); }
-  if(id==='lt-radar' && !window._ltRadInit){ window._ltRadInit=true; initRadar(); }
-}
+
 
 /* ══ PATIENTENINFO SUB-TABS ══ */
 function ptTab(el){
@@ -2555,6 +2550,11 @@ function drawLabOverview(){
 }
 
 /* ══ P3: MISSING ══ */
+/* called after initLab to show first lab-extra-tab */
+function initLabFirst(){
+  try { initLabOutliers(); } catch(e){ console.warn('initLabOutliers:', e); }
+}
+
 function initMissing(){
   const miss = [
     {n:'Hb-Elektrophorese',why:'Persistente Mikrozytose MCV 80.2 nie erklärt. Thalassämie-Träger ausschliessen oder bestätigen.',sc:'ts',imp:'Diagnose blockiert'},
@@ -3369,9 +3369,126 @@ function initLabOutliers(){
 
 function initLabStress(){
   const el=document.getElementById('lab-stress-content');if(!el)return;
-  const evs=[{y:'2008',e:'EBV-Infektion (Mononukleose)',t:'infekt',c:'sig',l:'ALAT 93 · ASAT 51.7 · VCA-IgG 1:320 · Leberreaktion'},{y:'Nov 2020',e:'Infektepisode (COVID neg)',t:'infekt',c:'wrn',l:'CRP 15 mg/l → Folgejahr: 0.4 mg/l'},{y:'2021',e:'Baseline (relativer Ruhezustand)',t:'base',c:'ok',l:'Vit D 34 · HoloTC 57 · Ferritin 37 · TSAT 32% · TG 0.84'},{y:'2022',e:'Hämaturie-Episoden (nie abgeklärt)',t:'kl',c:'wrn',l:'Sep: 10 Ery/µl · Nov: 25 Ery/µl'},{y:'Feb 2023',e:'Labormessung unter Stresslast',t:'stress',c:'sig',l:'HoloTC ↓44 (–23%) · TG ↑2.06 (×2.5) · HDL ↓1.24 · TSAT ↑49% · Vit D ↓30'},{y:'Jun 2024',e:'Trennung (Conscious Uncoupling, 17J Ehe)',t:'stress',c:'sig',l:'Kein Labor zu diesem Zeitpunkt'},{y:'2024',e:'ADHS-Diagnose (38J — Spätdiagnose)',t:'kl',c:'int',l:'Elvanse → Nebenwirkungen → bewusst gegen Medikation'},{y:'Jan 2025',e:'Tod des Vaters (intrakranieller Tumor, †76J)',t:'stress',c:'sig',l:'Kein Labor'},{y:'Apr 2025',e:'Neues Founding Team beigetreten',t:'kl',c:'int',l:'Zusätzliche Stressachse auf CEO/Board-Last'},{y:'Jun 2026',e:'Aktuell (erkrankt beim Arztbesuch)',t:'aktuell',c:'nv',l:'CRP 1 · Leuko 6.64 · Creatinin 82 · CK 117 · BD 118/75'}];
-  const icons={infekt:'🦠',base:'📊',stress:'💥',kl:'🏥',aktuell:'📍'};
-  el.innerHTML=`<div class="card"><div class="card-hd"><div class="card-hd-dot" style="background:var(--nv)"></div><span class="card-hd-title">Ereignis-Lab-Korrelation 2008–2026</span><span style="margin-left:auto;font-size:10px;color:var(--t3)">Infekte + psychosoziale Ereignisse im Kontext der Labordaten</span></div><div class="card-body-sm"><div style="position:relative;padding-left:22px;border-left:3px solid var(--bd)">${evs.map((e,i)=>`<div style="position:relative;margin-bottom:${i<evs.length-1?13:0}px"><div style="position:absolute;left:-30px;top:10px;width:12px;height:12px;border-radius:50%;background:var(--${e.c});border:2px solid var(--sur)"></div><div style="background:var(--sur);border:1px solid var(--${e.c}-d);border-left:3px solid var(--${e.c});border-radius:var(--rs);padding:9px 12px"><div style="display:flex;align-items:center;gap:8px;margin-bottom:4px"><span style="font-size:16px">${icons[e.t]}</span><span style="font-family:var(--mono);font-size:11px;font-weight:700;color:var(--${e.c})">${e.y}</span><span style="font-size:12px;font-weight:600;color:var(--t1)">${e.e}</span></div><div style="font-size:11px;color:var(--t3);font-family:var(--mono)">${e.l}</div></div></div>`).join('')}</div><div style="margin-top:14px;padding:10px 12px;background:var(--wrn-b);border:1px solid var(--wrn-d);border-radius:var(--rs)"><div style="font-size:12px;font-weight:700;color:var(--wrn);margin-bottom:5px">⚑ Feb 2023 = einzige umfangreiche Messung unter erhöhter Stresslast</div><div style="font-size:12px;color:var(--t2);line-height:1.6">HoloTC –23%, TG ×2.5, Vit D sinkend, TSAT erhöht — kein Zufallsbefund, sondern Stressmetabolik-Muster. Nüchtern-Status nicht dokumentiert → Werte möglicherweise überschätzt.</div></div></div></div>`;
+
+  // Timeline data: career + life events + illnesses + lab measurements
+  const timeline = [
+    // EARLY CAREER & HEALTH EVENTS
+    {y:'2004–2008', cat:'karriere', icon:'🎓', title:'HSG Studium Law/Economics + HEC Lausanne Exchange',
+     detail:'Hochleistungsphase 1: akademische Exzellenz. ND-Kompensation unbewusst aktiv.',
+     labs:[], col:'int'},
+    {y:'Okt 2008', cat:'erkrankung', icon:'🦠', title:'EBV-Infektion (Mononukleose)',
+     detail:'Epstein-Barr Virus nachgewiesen (VCA-IgG 1:320). Leberreaktion: ALAT 93, ASAT 51.7. Latente EBV-Persistenz seither.',
+     labs:['ALAT 93 U/l (↑)', 'ASAT 51.7 U/l (↑)', 'Leuko erhöht', 'CRP erhöht'], col:'sig'},
+    {y:'2008–2010', cat:'karriere', icon:'📚', title:'HSG Master + Insper Master (São Paulo)',
+     detail:'Interkontinentale Hochleistungsphase. Zwei parallele Masterabschlüsse. Hohe exekutive Belastung.',
+     labs:[], col:'int'},
+    // MID CAREER
+    {y:'2018', cat:'karriere', icon:'🚀', title:'Singularity University Executive Program',
+     detail:'Technologie-Leadership. Starkes Netzwerk. Impactgetriebene Neuorientierung.',
+     labs:[], col:'int'},
+    {y:'Jan 2021', cat:'lab', icon:'🔬', title:'Labor-Baseline 1 (Ruhephase)',
+     detail:'Erste umfangreiche Messung. Relativer Ruhezustand. Solide Ausgangswerte — aber bereits: Vit D 34, MCV 80.2, TSAT 32%.',
+     labs:['Vit D 34 µg/l', 'HoloTC 57 pmol/l', 'Ferritin 37 µg/l', 'TSAT 32%', 'TG 0.84 mmol/l', 'Creatinin 72 µmol/l'], col:'ok'},
+    {y:'Sep/Nov 2022', cat:'erkrankung', icon:'⚠️', title:'Hämaturie-Episoden (nie abgeklärt)',
+     detail:'Zweimalig signifikante Hämaturie ohne urologische/nephrologische Abklärung. Mögliche Persistenz unklar.',
+     labs:['Sep: 10 Ery/µl', 'Nov: 25 Ery/µl', 'Nie abgeklärt'], col:'wrn'},
+    // STRESS PERIOD - MOST CRITICAL
+    {y:'Nov 2020', cat:'erkrankung', icon:'🦠', title:'Infektepisode (COVID-19 neg.)',
+     detail:'CRP 15 mg/l — erhöht, COVID negativ. Mögliche andere Viruslast oder bakterieller Infekt.',
+     labs:['CRP 15 mg/l (↑)', 'COVID neg'], col:'wrn'},
+    {y:'Dez 2019–lfd.', cat:'karriere', icon:'🏢', title:'Co-Founder & CEO NGO',
+     detail:'Seit Dezember 2019 aktiv. Sinnstiftend aber energieintensiv: Personalverantwortung, Fundraising, politische Stakeholder. Dauert an.',
+     labs:[], col:'int'},
+    {y:'Jan 2021–Jan 2023', cat:'karriere', icon:'🪑', title:'Boardmember (2 weitere Mandate)',
+     detail:'Jan 2021: Boardmember Ecosystem, Jan 2023: zweites Board-Mandat. Steigende Governance-Last neben CEO-Rolle.',
+     labs:[], col:'int'},
+    {y:'Jan 2023', cat:'lab', icon:'🔬', title:'Labor-Messung 2 (Hochstressphase)',
+     detail:'KRITISCHE MESSUNG. Zeitlich: kurz nach GI-Abklärung, Board-Mandate laufen, CEO-Dauerstress. Alle Stressmarker verändert.',
+     labs:['HoloTC ↓44 (–23% in 14 Mo!)', 'TG ↑2.06 (×2.5!)', 'HDL ↓1.24', 'TSAT ↑49%', 'Vit D ↓30', 'Ferritin 48', 'Creatinin 75'], col:'sig'},
+    {y:'Jan 2023', cat:'erkrankung', icon:'🏥', title:'GI-Abklärung Zöliakie/IgE (→ negativ)',
+     detail:'Abklärung deutet auf GI-Symptome hin. Zöliakie neg., IgE unauff., Laktose heterozygot. Funktionelle GI-Beschwerden unter Stress möglich.',
+     labs:['IgA neg', 'IgE unauff.', 'Laktose heterozygot'], col:'int'},
+    {y:'Jun 2022', cat:'karriere', icon:'🤝', title:'Advisor-Mandat übernommen',
+     detail:'Weiteres Mandat auf bestehendem CEO+Board-Stack. Summe: CEO + 2 Board + 1 Advisor.',
+     labs:[], col:'int'},
+    // MAJOR LIFE EVENTS
+    {y:'Jun 2024', cat:'leben', icon:'💔', title:'Trennung (nach 17 Jahren, Conscious Uncoupling)',
+     detail:'Fundamentaler Lebensumbruch. Trotz bewusstem Prozess: hohe emotionale und logistische Last. Geteilte Elternschaft mit 2 Töchtern.',
+     labs:['Kein Labor'], col:'sig'},
+    {y:'2024', cat:'erkrankung', icon:'💭', title:'ADHS-Diagnose mit 38 (Spätdiagnose)',
+     detail:'Retrospektive Neubewertung der gesamten Lebensgeschichte. Elvanse → starke Nebenwirkungen → bewusst gegen Medikation. Biofeedback in Evaluation.',
+     labs:['Elvanse versucht', 'NW → keine Medi', 'Biofeedback: Evaluation'], col:'int'},
+    {y:'Apr 2025', cat:'karriere', icon:'🚀', title:'Neues Founding Team beigetreten',
+     detail:'Neue Leadership-Dynamik. Founding-Team-Kontext bedeutet: Aufbauarbeit + Personalführung + Investor-Kommunikation on top von bestehenden Mandaten.',
+     labs:[], col:'int'},
+    {y:'Jan 2025', cat:'leben', icon:'🕯️', title:'Tod des Vaters (intrakranieller Tumor, †76J)',
+     detail:'7 Monate nach der Trennung. Doppelter Trauerprozess. Vater: Gehirntumor — genetisch relevant (HFE? Eisenakkumulation im ZNS?).',
+     labs:['Kein Labor'], col:'sig'},
+    {y:'Jun 2026', cat:'lab', icon:'🔬', title:'Labor-Messung 3 — Aktuelle Aufnahme',
+     detail:'Beim Arztbesuch erkrankt. Basiswerte stabil — aber viele kritische Parameter weiterhin nie gemessen.',
+     labs:['CRP 1 mg/l', 'Leuko 6.64', 'Creatinin 82 µmol/l', 'CK 117 U/l', 'BD 118/75 mmHg'], col:'nv'},
+  ];
+
+  // Sort by year for display
+  const catConfig = {
+    karriere: {label:'Karriere & Bildung', col:'int'},
+    erkrankung: {label:'Erkrankung / Gesundheit', col:'wrn'},
+    leben: {label:'Lebensereignis', col:'sig'},
+    lab: {label:'Labor-Messung', col:'ok'},
+  };
+
+  const legendHtml = Object.entries(catConfig).map(([k,v])=>`
+    <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:var(--t2)">
+      <div style="width:10px;height:10px;border-radius:50%;background:var(--${v.col})"></div>${v.label}
+    </div>`).join('');
+
+  const rowsHtml = timeline.map((e,i)=>`
+    <div style="display:grid;grid-template-columns:110px 1fr;gap:0;border-bottom:1px solid var(--bg3);min-height:52px">
+      <!-- Date + category column -->
+      <div style="padding:8px 12px;background:var(--${e.col}-b);border-right:2px solid var(--${e.col});display:flex;flex-direction:column;justify-content:center">
+        <div style="font-family:var(--mono);font-size:10px;font-weight:700;color:var(--${e.col})">${e.y}</div>
+        <div style="font-size:9px;color:var(--t4);margin-top:2px">${catConfig[e.cat]?.label||e.cat}</div>
+      </div>
+      <!-- Content column -->
+      <div style="padding:8px 14px;display:flex;align-items:flex-start;gap:10px">
+        <span style="font-size:18px;flex-shrink:0;line-height:1.2">${e.icon}</span>
+        <div style="flex:1">
+          <div style="font-size:12px;font-weight:600;color:var(--t1);margin-bottom:3px">${e.title}</div>
+          <div style="font-size:11px;color:var(--t2);line-height:1.45;margin-bottom:${e.labs.length?4:0}px">${e.detail}</div>
+          ${e.labs.length ? `<div style="display:flex;flex-wrap:wrap;gap:5px">${e.labs.map(l=>`<span style="font-family:var(--mono);font-size:9.5px;padding:2px 7px;border-radius:3px;background:var(--sur2);border:1px solid var(--bd);color:var(--t2)">${l}</span>`).join('')}</div>` : ''}
+        </div>
+      </div>
+    </div>
+  `).join('');
+
+  el.innerHTML = `
+    <div class="card">
+      <div class="card-hd">
+        <div class="card-hd-dot" style="background:var(--nv)"></div>
+        <span class="card-hd-title">Lebensereignisse · Karriere · Erkrankungen · Laborwerte — 2004–2026</span>
+        <span style="margin-left:auto;font-size:10px;color:var(--t3)">Psychosoziale Belastung im Kontext biologischer Veränderungen</span>
+      </div>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;padding:10px 13px;border-bottom:1px solid var(--bd)">
+        ${legendHtml}
+        <div style="font-size:11px;color:var(--t4);margin-left:auto;font-style:italic">Chronologisch · Klick zum Vertiefen</div>
+      </div>
+      <div style="font-size:0">${rowsHtml}</div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+      <div style="padding:12px 14px;background:var(--sig-b);border:1px solid var(--sig-d);border-left:3px solid var(--sig);border-radius:var(--r)">
+        <div style="font-size:12px;font-weight:700;color:var(--sig);margin-bottom:7px">⚑ Kritische Beobachtung: Feb 2023-Messung</div>
+        <div style="font-size:12px;color:var(--t2);line-height:1.65">
+          Die einzige umfangreiche Labormessung (Feb 2023) liegt zeitlich exakt in einer Phase maximaler Belastungsakkumulation: CEO-Dauerlast + 2 Board + 1 Advisor + GI-Symptome + keine ADHS-Diagnose/Unterstützung. <strong>HoloTC –23%, TG ×2.5, Vit D sinkend, TSAT 49%</strong> sind kein Zufall — sondern Stressmetabolik-Ausdruck. Der <strong>Nüchtern-Status ist unbekannt</strong>, was einzelne Werte überschätzen könnte.
+        </div>
+      </div>
+      <div style="padding:12px 14px;background:var(--wrn-b);border:1px solid var(--wrn-d);border-left:3px solid var(--wrn);border-radius:var(--r)">
+        <div style="font-size:12px;font-weight:700;color:var(--wrn);margin-bottom:7px">⟳ EBV 2008 — Biologischer Wendepunkt?</div>
+        <div style="font-size:12px;color:var(--t2);line-height:1.65">
+          EBV mit 22J: Leberreaktion, VCA-IgG 1:320 — seither latent persistierend. Science 2022 (Bjornevik): EBV als wahrscheinlichste Ursache von MS (Risiko ×32). Unter chronischem Stress kann latenter EBV reaktivieren. Zeitlinie: EBV 2008 → erste Messung 2021 → Stressmessung 2023 → Trennung 2024 → Tod Vater 2025. <strong>Kein EBV-Monitoring seither.</strong>
+        </div>
+      </div>
+    </div>
+  `;
 }
 
 function initLabCtx(){
